@@ -1,0 +1,17 @@
+{
+  "name": "ide-latex",
+  "main": "./lib/ide-latex",
+  "version": "0.0.0",
+  "description": "An all-in-one LaTeX for Atom package",
+  "keywords": [
+    "latex",
+    "ide"
+  ],
+  "repository": "https://github.com/atom/ide-latex",
+  "license": "MIT",
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  },
+  "dependencies": {
+  }
+}
