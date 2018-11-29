@@ -1,8 +1,15 @@
-export function activate (state): void {
-  console.log("Activating ide-latex")
-  console.log(state)
+/**
+ * Core functions
+ */
+
+export function activate (): void {
+  console.log("activating ide-latex")
 }
 
 export function deactivate (): void {
-  console.log("deactivating")
+  console.log("deactivating ide-latex")
 }
+
+/**
+ * Consumers
+ */

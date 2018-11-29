@@ -1,6 +1,6 @@
 {
   "name": "ide-latex",
-  "main": "./lib/main",
+  "main": "./dist/main",
   "version": "0.0.0",
   "description": "An all-in-one LaTeX for Atom package",
   "keywords": [
@@ -14,6 +14,9 @@
   },
   "dependencies": {
     "tree-sitter-biber": "0.4.0"
+  },
+  "devDependencies": {
+    "@types/atom": "latest"
   },
   "scripts": {
     "build": "tsc"
