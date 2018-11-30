@@ -16,7 +16,8 @@
     "tree-sitter-biber": "0.4.0"
   },
   "devDependencies": {
-    "@types/atom": "latest"
+    "@types/atom": "latest",
+    "tslint": "latest"
   },
   "scripts": {
     "build": "tsc"

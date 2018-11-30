@@ -10,9 +10,13 @@ Syntax highlighting needs to be provided by another package, preferably `languag
 - Folding
 - Autocomplete
 - Linting
-- Wordcount
+- Wordcount (and frequency?)
 - Hyperclick
 - General features as I think of them
 - Compile
 - Tree of project
 - Preview equations
+- Various table creation / navigation tools
+- Image drag and drop (? no idea how to do this one)
+- Templates (basically large snippets & autocomplete --- pull from online?)
+- Spell checking rules
