@@ -7,7 +7,7 @@
     "latex",
     "ide"
   ],
-  "repository": "https://github.com/atom/ide-latex",
+  "repository": "https://github.com/Aerijo/ide-latex",
   "license": "MIT",
   "engines": {
     "atom": ">=1.0.0 <2.0.0"

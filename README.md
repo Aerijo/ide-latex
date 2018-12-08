@@ -20,3 +20,5 @@ Syntax highlighting needs to be provided by another package, preferably `languag
 - Image drag and drop (? no idea how to do this one)
 - Templates (basically large snippets & autocomplete --- pull from online?)
 - Spell checking rules
+- Search in project
+- Suggest making project a git repository (with directory blacklist)
