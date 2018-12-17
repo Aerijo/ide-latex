@@ -1,24 +1,27 @@
-import { ProjectWatcher } from "./config/projectWatcher"
-import { GlobalConfig } from "./config/globalConfig"
+import * as child_process from "child_process"
 
-/**
- * Core functions
- */
+import { AutoLanguageClient } from "atom-languageclient"
 
-export function activate (): void {
-  console.log("activating ide-latex")
+class LatexLanguageClient extends AutoLanguageClient {
 
-  const config = new GlobalConfig()
+  getGrammarScopes () { return ["text.tex.latex", "text.tex.biber", "text.tex.bibtex"] }
 
-  const project = new ProjectWatcher(config)
+  getLanguageName () { return "LaTeX" }
 
-  project.findActiveProjectRoot()
+  getServerName () { return "latex-language-server" }
+
+  startServerProcess (projectPath: string) {
+    console.log("starting latex server...")
+
+    const command = "/Users/benjamingray/github/latex-language-server/cmake-build-debug/latex_language_server"
+    const args: string[] = []
+    const spawned = child_process.spawn(command, args, { cwd: projectPath })
+
+    console.log("spawned", spawned)
+
+    return spawned
+  }
+
 }
 
-export function deactivate (): void {
-  console.log("deactivating ide-latex")
-}
-
-/**
- * Consumers
- */
+module.exports = new LatexLanguageClient()

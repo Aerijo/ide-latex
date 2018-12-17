@@ -268,12 +268,19 @@ export class ProjectWatcher {
   }
 
   getTexFileContents (absFilePath: string): string | undefined {
+    let guessedExt = false
+    if (path.extname(absFilePath) === "") {
+      absFilePath += ".tex"
+      guessedExt = true
+    }
+
     try {
       return fs.readFileSync(absFilePath, { encoding: "utf8" })
     } catch (e) {
-      if (path.extname(absFilePath) !== "") return undefined
+      if (!guessedExt) return undefined
+
       try {
-        return fs.readFileSync(`${absFilePath}.tex`, { encoding: "utf8" })
+        return fs.readFileSync(absFilePath.slice(0, -4), { encoding: "utf8" })
       } catch (e) {
         return undefined
       }

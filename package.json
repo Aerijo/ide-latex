@@ -18,7 +18,8 @@
   "devDependencies": {
     "@types/atom": "latest",
     "typescript": "latest",
-    "tslint": "latest"
+    "tslint": "latest",
+    "atom-languageclient": "0.9.9"
   },
   "scripts": {
     "build": "tsc"

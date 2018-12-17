@@ -30,7 +30,7 @@ export class Logger {
   }
 
   add (level: LVL, ...args: any): void {
-    const display = this.logLevel >= level
+    const display = this.shouldDisplay(level)
     const item = {
       level,
       displayed: display,
@@ -75,5 +75,9 @@ export class Logger {
     return this.history
       .slice(this.index, this.maxHistorySize)
       .concat(this.history.slice(0, this.index))
+  }
+
+  shouldDisplay (level: LVL): boolean {
+    return level >= this.logLevel
   }
 }
