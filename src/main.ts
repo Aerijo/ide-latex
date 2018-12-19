@@ -19,12 +19,6 @@ class LatexLanguageClient extends AutoLanguageClient {
 
     console.log("spawned", spawned)
 
-    spawned.stdout.setEncoding("utf8")
-
-    spawned.stdout.on("data", data => {
-      console.log("STDOUT:\n", data)
-    })
-
     spawned.once("close", (code, signal) => {
       console.log(`latex lang server closed with code ${code} and signal ${signal}`)
     })

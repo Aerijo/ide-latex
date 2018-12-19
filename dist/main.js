@@ -14,15 +14,12 @@ class LatexLanguageClient extends atom_languageclient_1.AutoLanguageClient {
         console.log("spawned", spawned);
         spawned.stdout.setEncoding("utf8");
         spawned.stdout.on("data", data => {
-            console.log(data);
+            console.log("STDOUT:\n", data);
         });
         spawned.once("close", (code, signal) => {
-            console.log(`closed latex lang server with code ${code} and signal ${signal}`);
+            console.log(`latex lang server closed with code ${code} and signal ${signal}`);
         });
         return spawned;
-    }
-    actionableNotification(notification) {
-        console.log(notification);
     }
 }
 module.exports = new LatexLanguageClient();
