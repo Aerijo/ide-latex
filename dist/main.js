@@ -6,13 +6,23 @@ class LatexLanguageClient extends atom_languageclient_1.AutoLanguageClient {
     getGrammarScopes() { return ["text.tex.latex", "text.tex.biber", "text.tex.bibtex"]; }
     getLanguageName() { return "LaTeX"; }
     getServerName() { return "latex-language-server"; }
-    startServerProcess(_projectPath) {
+    startServerProcess(projectPath) {
         console.log("starting latex server...");
         const command = "/Users/benjamingray/github/latex-language-server/cmake-build-debug/latex_language_server";
         const args = [];
-        const spawned = child_process.spawn(command, args);
+        const spawned = child_process.spawn(command, args, { cwd: projectPath });
         console.log("spawned", spawned);
+        spawned.stdout.setEncoding("utf8");
+        spawned.stdout.on("data", data => {
+            console.log(data);
+        });
+        spawned.once("close", (code, signal) => {
+            console.log(`closed latex lang server with code ${code} and signal ${signal}`);
+        });
         return spawned;
+    }
+    actionableNotification(notification) {
+        console.log(notification);
     }
 }
 module.exports = new LatexLanguageClient();
