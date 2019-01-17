@@ -1,8 +1,0 @@
-{
-  "text.tex.latex": {
-    "environment": {
-      "prefix": "\\begin",
-      "body": "\\begin{$1}\n\t$2\n\\end{$1}"
-    }
-  }
-}

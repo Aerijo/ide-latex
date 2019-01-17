@@ -10,7 +10,7 @@ class LatexLanguageClient extends AutoLanguageClient {
   startServerProcess (projectPath: string) {
     console.log("starting latex server...")
 
-    const command = "/Users/benjamingray/github/latex-language-server/cmake-build-debug/latex_language_server"
+    const command = "/home/benjamin/github/latex-language-server/cmake-build-debug/latex_language_server"
     const args: string[] = []
     const spawned = child_process.spawn(command, args, { cwd: projectPath })
 
@@ -19,12 +19,13 @@ class LatexLanguageClient extends AutoLanguageClient {
 
     console.log("spawned", spawned)
 
-    spawned.stdout.on("data", data => {
-      console.error(data)
-    })
-    spawned.stderr.on("data", data => {
-      console.warn(data)
-    })
+    // spawned.stderr.on("data", data => {
+    //   console.warn(data)
+    // })
+
+    // spawned.stdout.on("data", data => {
+    //   console.error(data)
+    // })
 
     spawned.once("close", (code, signal) => {
       console.log(`latex lang server closed with code ${code} and signal ${signal}`)

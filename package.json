@@ -17,11 +17,18 @@
   },
   "devDependencies": {
     "@types/atom": "latest",
-    "typescript": "latest",
+    "atom-languageclient": "^0.9.9",
     "tslint": "latest",
-    "atom-languageclient": "0.9.9"
+    "typescript": "latest"
   },
   "scripts": {
     "build": "tsc"
+  },
+  "providedServices": {
+    "autocomplete.provider": {
+      "versions": {
+        "2.0.0": "provideAutocomplete"
+      }
+    }
   }
 }
