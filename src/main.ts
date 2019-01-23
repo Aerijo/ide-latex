@@ -3,29 +3,20 @@ import * as child_process from "child_process"
 import { AutoLanguageClient } from "atom-languageclient"
 
 class LatexLanguageClient extends AutoLanguageClient {
-  getGrammarScopes () { return [ "text.tex.latex" ] }
+  getGrammarScopes () { return [ "text.tex.latex", "text.tex.biber", "text.tex.bibtex" ] }
   getLanguageName () { return "LaTeX" }
   getServerName () { return "latex-language-server" }
 
   startServerProcess (projectPath: string) {
     console.log("starting latex server...")
 
-    const command = "/home/benjamin/github/latex-language-server/cmake-build-debug/latex_language_server"
-    const args: string[] = []
-    const spawned = child_process.spawn(command, args, { cwd: projectPath })
+    const command = atom.config.get("ide-latex.serverPath")
+    const spawned = child_process.spawn(command, { cwd: projectPath })
 
     spawned.stdout.setEncoding("utf8")
     spawned.stderr.setEncoding("utf8")
 
     console.log("spawned", spawned)
-
-    // spawned.stderr.on("data", data => {
-    //   console.warn(data)
-    // })
-
-    // spawned.stdout.on("data", data => {
-    //   console.error(data)
-    // })
 
     spawned.once("close", (code, signal) => {
       console.log(`latex lang server closed with code ${code} and signal ${signal}`)
