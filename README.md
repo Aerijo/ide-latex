@@ -1,5 +1,10 @@
 # ide-latex package
 
+---------------
+:warning: This package will not work for you yet. It needs the corresponding [language server](https://github.com/Aerijo/latex-language-server) to be installed, and that is still in development.
+---------------
+
+
 The all-in-one package I thought I'd never make.
 
 All functionality can (read: will if I remember) be togglable though, so there's that.

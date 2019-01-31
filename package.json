@@ -2,7 +2,7 @@
   "name": "ide-latex",
   "main": "./dist/main",
   "version": "0.2.0",
-  "description": "An all-in-one LaTeX for Atom package",
+  "description": "(Not working yet) An all-in-one LaTeX for Atom package",
   "keywords": [
     "latex",
     "ide"
