@@ -12,9 +12,6 @@
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
   },
-  "dependencies": {
-    "tree-sitter-biber": "0.4.0"
-  },
   "devDependencies": {
     "@types/atom": "latest",
     "atom-languageclient": "^0.9.9",
