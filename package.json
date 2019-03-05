@@ -40,6 +40,11 @@
       "versions": {
         "2.0.0": "provideAutocomplete"
       }
+    },
+    "outline-view": {
+      "versions": {
+        "0.1.0": "provideOutlines"
+      }
     }
   }
 }
